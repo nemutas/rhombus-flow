@@ -1,7 +1,13 @@
+@use '../styles/mixins/media.scss' as *;
+
 html {
 	width: 100%;
 	height: 100%;
-	font-size: calc(1000vw / 1600);
+	font-size: calc(1000vw / 750);
+	@include pc {
+		font-size: max(10px, calc(1000vw / 1600));
+	}
+
 	font-family: var(--Poppins);
 }
 
