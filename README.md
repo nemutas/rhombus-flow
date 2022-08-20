@@ -1,31 +1,27 @@
 # About
 
-This application is a remake of [water drops](https://github.com/nemutas/r3f-water-drops), previously created with R3F (React Three Fiber), using Vanilla's Three.js.
+This application is inspired by [Curl Flow](https://curl-flow.vercel.app/) created by [ichitaro](https://github.com/ichitaro).
 
-https://nemutas.github.io/scale/
+https://nemutas.github.io/rhombus-flow/
 
-![output(video-cutter-js com) (1)](https://user-images.githubusercontent.com/46724121/184068424-ef3c5537-b8c7-4b78-93d6-4fe044178b4d.gif)
+<img src='https://user-images.githubusercontent.com/46724121/185749439-0945395d-ea5f-4d77-8672-e768db83144a.png' alt='' width='800' />
 
 # Skills used for production
 
 - TypeScript
 - Vite
 - Three.js
-- [cannon-es](https://github.com/pmndrs/cannon-es)
-- Raymarching
-- Offscreen rendering
+- instancedMesh
+- GPUComputationRenderer
+- Rotation using Quaternion
+- ColorMask using Postprocessing
 
 # Reference
 
-This is a technical document on Raymarching. They are all very easy to understand and are excellent documents.
-
-- [wgld.org](https://wgld.org/d/glsl/g008.html) - Japanese
-- [Inigo Quilez - articles](https://www.iquilezles.org/www/index.htm)
-- [Raymarching simple scene #48](https://www.youtube.com/watch?v=q2WcGi3Cr9w&t=6s)
-
-Physics simulation
-
-- [BestServedBold Christmas Baubles](https://codesandbox.io/s/bestservedbold-christmas-baubles-zxpv7)
+- [Curl Flow](https://github.com/ichitaro/curl-flow)
+- [Carla Flow](https://github.com/ichitaro/carla-flow)
+- [The Spirit](https://github.com/edankwan/The-Spirit)
+- [Quaternion in GLSL](https://qiita.com/aa_debdeb/items/c34a3088b2d8d3731813)
 
 # License
 
