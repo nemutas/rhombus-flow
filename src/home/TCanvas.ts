@@ -114,7 +114,6 @@ export class TCanvas extends TCanvasBase {
 			if (!isDepthMaterial) {
 				shader.fragmentShader = shader.fragmentShader.replace('#define STANDARD', shaders.fragDefine)
 				shader.fragmentShader = shader.fragmentShader.replace('#include <output_fragment>', shaders.fragParts)
-				// console.log(shader.fragmentShader)
 			}
 		}
 	}
@@ -170,8 +169,7 @@ export class TCanvas extends TCanvasBase {
 		const gammaCorrectionPass = new ShaderPass(GammaCorrectionShader)
 		this.effectComposer.addPass(gammaCorrectionPass)
 
-		this.fxaa = new FxaaPass()
-		this.fxaa.update(this.size.width, this.size.height)
+		this.fxaa = new FxaaPass(this.size.width, this.size.height)
 		this.effectComposer.addPass(this.fxaa.pass)
 
 		this.colorMask = new ColorMaskPass(this.assets.image.data as THREE.Texture, this.size.aspect, this.gui)
@@ -200,11 +198,6 @@ export class TCanvas extends TCanvasBase {
 			this.scaleUniforms.u_positionTexture.value = this.simulator.texturePosition
 			this.scaleUniforms.u_prevPositionTexture.value = this.simulator.texturePrevPosition
 		}
-
-		// const light = this.scene.getObjectByName('directionalLight') as THREE.DirectionalLight
-		// light.position.set(-mousePos.x, light.position.y, mousePos.z)
-		// light.lookAt(mousePos)
-		// light.target.lookAt(mousePos)
 	}
 
 	private addEvent = () => {

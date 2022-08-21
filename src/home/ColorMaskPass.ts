@@ -31,11 +31,6 @@ export class ColorMaskPass {
 		this.gui.add(d, 'mixTexture').name('Mix Texture')
 	}
 
-	updateTextureScale = (canvasAspect: number) => {
-		const { u_texture, u_uvScale } = this.pass.uniforms
-		this.calcCoveredTextureScale(u_texture.value, canvasAspect, u_uvScale.value)
-	}
-
 	private calcCoveredTextureScale = (texture: THREE.Texture, aspect: number, target?: THREE.Vector2) => {
 		const result = target ?? new THREE.Vector2()
 		const imageAspect = texture.image.width / texture.image.height
@@ -44,6 +39,11 @@ export class ColorMaskPass {
 		else result.set(1, imageAspect / aspect)
 
 		return result
+	}
+
+	updateTextureScale = (canvasAspect: number) => {
+		const { u_texture, u_uvScale } = this.pass.uniforms
+		this.calcCoveredTextureScale(u_texture.value, canvasAspect, u_uvScale.value)
 	}
 
 	update = () => {}
